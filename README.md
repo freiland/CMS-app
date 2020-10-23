@@ -23,7 +23,7 @@ _This webpage is for a site where projects, posts, and comments can all be added
 
 ## Known Bugs
 
-_No known bugs._
+_Spec folder would not load, no rspec tests currently._
 
 ## Support and Contact Information
 
