@@ -6,7 +6,7 @@
 
 ## Description 
 
-_This webpage is for a site where projects, posts, and comments can all be added and viewed. Each post can have many comments (a one-to-many relationship)._
+_This webpage is for a site where projects, posts, and comments can all be added and viewed. Each post can have many comments (a one-to-many relationship). The page uses the gem 'devise' to authenticate user singn-up and sign-in, as well as authenticate admins to create, update, and destroy projects, posts, and comments on the site._
 
 
 ## Setup/Installation Requirements
@@ -37,6 +37,7 @@ _If you encounter any problems with this software, or would like to contribute, 
 * Rails
 * ActiveRecord
 * postgres
+* devise
 
 
 ## License 
