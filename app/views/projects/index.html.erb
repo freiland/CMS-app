@@ -1,3 +1,5 @@
+
+
 <% if @projects.any? %>
   <ul>
     <% @projects.each do |project| %>
@@ -9,11 +11,16 @@
 <% end %>
 
 
-<p><%= link_to "add project", new_project_path %></p><br>
+
 
 <p><%= link_to "view posts", posts_path %></p>
 
 <p><%= link_to "sign up", new_user_registration_path %></p>
+
+<% if current_user && current_user.admin %>
+  <%= link_to “Add project", new_project_path %>
+<% end %>
+
 
 <p><%= link_to "sign in", user_session_path%></p>
 
