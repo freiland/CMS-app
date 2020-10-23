@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   
   root to: 'projects#index' 
-  devise_for :user
+  
   resources :projects
   resources :posts do 
     resources :comments
