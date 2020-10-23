@@ -1,0 +1,26 @@
+<h1><%= @post.subject %></h1>
+<h3>Price for case of six: $<%= @product.cost %></h3>
+<h3><%= @product.country_of_origin %> </h3>
+
+<% if @post.comments.any? %>
+  <h4>Comments:</h4>
+
+  <% @post.comments.each do |comment| %>
+    <ul>
+      <li>
+        <%= link_to comment.author, post_comment_path(@post, comment) %>
+      </li>
+    </ul>
+  <% end %>
+<% else %>
+  <p>No comments are yet for this posting, check back soon.</p>
+<% end %>
+
+<p><%= link_to "Add a comment", new_post_comment_path(@post) %></p>
+
+<p><%= link_to "Edit", edit_post_path(@post) %></p>
+<p><%= link_to "Delete", post_path(@post),
+                         :data => {:confirm => "You sure?",
+                                   :method => "delete"} %></p>
+
+<p><%= link_to "return to postings", posts_path %></p>
