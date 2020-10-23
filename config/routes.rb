@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
-  rsources :projects
+  #root to: '' 
+  resources :projects
   resources :posts do 
     resources :comments
   end
