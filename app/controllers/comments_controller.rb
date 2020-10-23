@@ -4,7 +4,7 @@ class CommentsController < ApplicationController
 
   def new
     @post = Post.find(params[:post_id])
-    @comment = @posts.comments.new
+    @comment = @post.comments.new
     render :new
   end
 

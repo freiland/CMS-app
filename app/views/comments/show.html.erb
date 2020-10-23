@@ -1,0 +1,10 @@
+<h1>comment by: <%= @comment.author %></h1>
+<h2>Post subject: <%= @post.subject %></h2><br><br>
+<h4><%= @comment.comment_body %></h4>
+
+<p><%= link_to "Edit comment", edit_post_comment_path(@post, @comment) %></p>
+<p><%= link_to "Delete comment", post_comment_path(@post, @comment),
+                        :data => {:confirm => "Are you sure?",
+                                       :method => "delete"} %></p>
+
+<p><%= link_to "Return to postings", post_path(@post) %></p>

@@ -1,4 +1,5 @@
 <h1><%= @post.subject %></h1>
+<h4><%= @post.content_body %></h4>
 
 <% if @post.comments.any? %>
   <h4>Comments:</h4>
@@ -11,7 +12,7 @@
     </ul>
   <% end %>
 <% else %>
-  <p>No comments are yet for this posting, check back soon.</p>
+  <p>No comments yet for this posting, check back soon.</p>
 <% end %>
 
 <p><%= link_to "Add a comment", new_post_comment_path(@post) %></p>
