@@ -1,0 +1,14 @@
+<% if @posts.any? %>
+  <ul>
+    <% @posts.each do |post| %>
+      <li><%= link_to post.name, post_path(post) %></li>
+    <% end %>
+  </ul>
+<% else %>
+  <p>No posts yet.</p>
+<% end %>
+
+
+<p><%= link_to "add post", new_post_path %></p>
+
+<p><%= link_to "return to projects", projects_path %></p>
