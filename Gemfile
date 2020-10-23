@@ -40,6 +40,8 @@ gem 'jquery-rails'
 
 gem "capybara"
 
+gem 'devise'
+
 gem 'faker'
 
 gem 'httparty'
