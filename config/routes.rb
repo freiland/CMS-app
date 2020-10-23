@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  #root to: '' 
+  root to: 'projects#index' 
   resources :projects
   resources :posts do 
     resources :comments
