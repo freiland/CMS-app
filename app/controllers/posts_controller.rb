@@ -46,7 +46,7 @@ class PostsController < ApplicationController
   end
 
   private
-    def product_params
+    def post_params
       params.require(:post).permit(:subject, :content_body)
     end
 

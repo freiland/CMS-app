@@ -1,7 +1,7 @@
 <% if @posts.any? %>
   <ul>
     <% @posts.each do |post| %>
-      <li><%= link_to post.name, post_path(post) %></li>
+      <li><%= link_to post.subject, post_path(post) %></li>
     <% end %>
   </ul>
 <% else %>
