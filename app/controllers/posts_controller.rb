@@ -1,8 +1,10 @@
 class PostsController < ApplicationController
-  before_action :only => [:new, :edit] do
-    redirect_to new_user_session_path unless current_user && current_user.admin
+  before_action except: [:index, :show] do 
+    unless is_admin?
+      flash[:alert] = 'You do not have access to this content.'
+      redirect_to posts_path 
+      end
   end
-end
 
 
   def index

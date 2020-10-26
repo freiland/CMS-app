@@ -1,6 +1,11 @@
 class ProjectsController < ApplicationController
-  before_action :authenticate_user!, :except => [:index]
-
+  before_action except: [:index, :show] do 
+    unless is_admin?
+      flash[:alert] = 'You do not have access to this content.'
+      redirect_to projects_path 
+      end
+  end
+  
   def index
     @projects = Project.all
     render :index
