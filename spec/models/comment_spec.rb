@@ -1,6 +1,6 @@
-# require 'rails_helper'
+require 'rails_helper'
 
-# describe Comment do 
+describe Comment do 
 
-#   it { should validate_presence_of :comment_body }
-# end
+  it { should validate_presence_of :comment_body }
+end
