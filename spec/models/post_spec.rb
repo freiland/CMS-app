@@ -1,5 +1,5 @@
-require 'rails_helper'
+# require 'rails_helper'
 
-describe Post do 
-  it { should have_many :comments }
-end
+# describe Post do 
+#   it { should validate_presence_of :content_body }
+# end
