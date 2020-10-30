@@ -1,11 +1,16 @@
 class PostsController < ApplicationController
-  before_action except: [:index, :show] do 
+  before_action :only => [:new, :edit] do 
     unless is_admin?
       flash[:alert] = 'You do not have access to this content.'
       redirect_to posts_path 
       end
   end
 
+  def require_admin
+    if !current_user.admin?
+      redirect_to benefits_path
+    end
+  end
 
   def index
     @posts = Post.all
@@ -47,7 +52,11 @@ class PostsController < ApplicationController
 
   def destroy
     @post = Post.find(params[:id])
-    @post.destroy
+    if current_user.admin?
+      @post.destroy
+    else
+      flash[:alert] = 'You do not have access to this content.'
+    end
     redirect_to posts_path
   end
 

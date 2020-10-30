@@ -1,9 +1,7 @@
 class CommentsController < ApplicationController
-  before_action except: [:new, :create, :show] do 
-    unless is_admin? || is_creator?
-      flash[:alert] = 'You do not have access to this content.' 
-      redirect_to posts_path
-      end
+  before_action :authenticate_user!, :only => [:new]
+  before_action :only => [:edit, :destroy] do
+    redirect_to new_user_session_path unless current_user && current_user.admin
   end
 
 

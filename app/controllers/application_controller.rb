@@ -6,7 +6,7 @@ class ApplicationController < ActionController::Base
   helper_method [:is_admin?, :is_creator?]
 
   def is_admin?
-    current_user && current_user.is_admin
+    current_user && current_user.admin
   end
 
   def is_creator?
