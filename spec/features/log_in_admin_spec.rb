@@ -6,6 +6,11 @@ describe 'logs in a new administrator' do
     fill_in 'Email', :with => 'testadmin@email.com'
     fill_in 'Password', :with => 'password'
     click_on 'Log in'
-    expect(page). to have_content 'No projects'
+    expect(page).to have_content 'No projects'
+
+    click_on 'view posts'
+    click_on 'add post'
+    fill_in 'Subject', :with => 'Beirut'
+    fill_in 'Content body', :with => 'dope'
   end 
 end
