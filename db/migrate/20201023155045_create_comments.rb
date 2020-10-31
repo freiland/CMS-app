@@ -7,3 +7,5 @@ class CreateComments < ActiveRecord::Migration[5.2]
     end
   end
 end
+# rails g migration add_foreign_key_for_comments
+# in that:
